@@ -121,4 +121,12 @@ bk () { cd ..; ls; }
 dv () { cd $1; ls; }
 
 # run contrib-fortune
-contrib-fortune
+# contrib-fortune
+PATH=$PATH:~/bin/eclipse
+PATH=$PATH:~/bin/franz
+
+# Shut up and f*ck off
+fly () { $1 > /dev/null & disown; }
+
+# sourcing my aliases
+source .bash_aliases

@@ -1,3 +1,10 @@
+" People apparently have this line in their .vimrc a lot.
+" Syntax highlitning worked from the beginning for me.
+syntax on
+
+" For pathogen
+execute pathogen#infect()
+
 " For the :find command
 set path=$PWD/**
 
@@ -25,3 +32,33 @@ set expandtab
 " http://learnvimscriptthehardway.stevelosh.com/chapters/12.html
 " Convert all tabs into spaces on opening a file, also indent it nicely
 autocmd BufReadPre * :normal gg=G | retab
+
+" http://stackoverflow.com/questions/235439/vim-80-column-layout-concerns
+" Draws a red line at 80 columns
+set colorcolumn=80
+
+" http://stackoverflow.com/questions/237289/vim-configure-line-number-coloring
+" Sets line numbers on by default and colors them in white
+set number
+highlight LineNr ctermfg=white
+
+" http://stackoverflow.com/questions/10499866/
+" deselecting-matching-strings-after-search-and-replace-in-vim<Paste>
+" This is for deselecting matching lines after a search
+" Leader is \, btw
+map <Leader><Space> :noh<CR>
+
+" I is no pearl developer
+" http://stackoverflow.com/questions/11666170/vim-persistent-set-syntax-for-a-given-filetype
+autocmd BufNewFile,BufRead *.pl   set syntax=prolog
+
+" For using the clipboard as the buffer when copying and pasting
+" http://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim
+set clipboard=unnamedplus
+
+" For quickly changing window splits
+" http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
