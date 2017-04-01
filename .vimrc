@@ -62,3 +62,15 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+
+" For activating filetype plugins
+filetype plugin on
+
+" For moving lines around
+" http://vim.wikia.com/wiki/Moving_lines_up_or_down
+" only works in insert mode!
+inoremap <A-Down> <Esc>:m .+1<CR>==gi
+inoremap <A-Up> <Esc>:m .-2<CR>==gi
+
+" For saving
+nmap <C-S> :w<CR>
