@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Apply the keyboard remapping configuration
+xmodmap ~/.Xmodmap 
+
+# Open fluxgui
+~/.local/bin/fluxgui
