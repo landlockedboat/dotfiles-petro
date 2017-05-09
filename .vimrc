@@ -35,7 +35,7 @@ autocmd BufReadPre * :normal gg=G | retab
 
 " http://stackoverflow.com/questions/235439/vim-80-column-layout-concerns
 " Draws a red line at 80 columns
-set colorcolumn=80
+set colorcolumn=77
 
 " http://stackoverflow.com/questions/237289/vim-configure-line-number-coloring
 " Sets line numbers on by default and colors them in white
@@ -51,6 +51,8 @@ map <Leader><Space> :noh<CR>
 " I is no pearl developer
 " http://stackoverflow.com/questions/11666170/vim-persistent-set-syntax-for-a-given-filetype
 autocmd BufNewFile,BufRead *.pl   set syntax=prolog
+
+autocmd BufNewFile,BufRead *.clips   set syntax=clips
 
 " For using the clipboard as the buffer when copying and pasting
 " http://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim
@@ -74,3 +76,7 @@ inoremap <A-Up> <Esc>:m .-2<CR>==gi
 
 " For saving
 nmap <C-S> :w<CR>
+
+" Memory isn't an issue anymore, we can afford to keep stored
+" more than 20 Ex commands in memory at once.
+set history=200

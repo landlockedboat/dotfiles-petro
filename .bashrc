@@ -125,8 +125,20 @@ dv () { cd $1; ls; }
 PATH=$PATH:~/bin/eclipse
 PATH=$PATH:~/bin/franz
 
-# Shut up and f*ck off
 fly () { $1 > /dev/null & disown; }
+
+# for compiling latex with bibliography
+pdfbib () 
+{ 
+  pdflatex master.tex;
+  bibtex master.aux;
+  pdflatex master.tex;
+  pdflatex master.tex;
+}
 
 # sourcing my aliases
 source .bash_aliases
+
+# l and ls at start of every shell login
+l
+ls
